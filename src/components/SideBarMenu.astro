@@ -1,0 +1,23 @@
+---
+import { MENU_LINKS } from "../config.js";
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+<ul class="menu menu-lg px-4 py-2 gap-1">
+  {MENU_LINKS.map((link) => {
+    const normalized = link.path.replace(/\/$/, "") || "/";
+    const isActive = normalized === currentPath;
+    return (
+      <li>
+        <a
+          href={link.path}
+          class={isActive ? "active font-semibold" : ""}
+          aria-current={isActive ? "page" : undefined}
+        >
+          {link.title}
+        </a>
+      </li>
+    );
+  })}
+</ul>
+

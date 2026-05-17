@@ -1,0 +1,41 @@
+---
+// CertificateCard — простий компонент для відображення сертифіката курсу.
+// Plain JavaScript у frontmatter, без TypeScript-інтерфейсів.
+const { title, description, reflection, certificateUrl } = Astro.props;
+---
+<article class="card bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-shadow h-full">
+  <div class="card-body">
+    <div class="flex items-start gap-3">
+      <div class="text-primary shrink-0 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <h3 class="card-title text-base-content text-lg leading-snug">{title}</h3>
+    </div>
+
+    {description && (
+      <p class="text-sm text-secondary leading-relaxed mt-2">
+        <span class="font-semibold text-base-content">Про курс: </span>{description}
+      </p>
+    )}
+
+    {reflection && (
+      <p class="text-sm text-secondary leading-relaxed">
+        <span class="font-semibold text-base-content">Що я взяв із курсу: </span>{reflection}
+      </p>
+    )}
+
+    <div class="card-actions justify-end mt-3">
+      <a
+        href={certificateUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-sm btn-primary"
+      >
+        Переглянути сертифікат
+      </a>
+    </div>
+  </div>
+</article>
+

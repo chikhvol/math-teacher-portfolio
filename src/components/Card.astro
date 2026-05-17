@@ -1,0 +1,16 @@
+---
+const { title, body, href, tag } = Astro.props;
+---
+<div class="card bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-shadow">
+  <div class="card-body">
+    {tag && <div class="badge badge-outline badge-primary mb-2">{tag}</div>}
+    <h3 class="card-title text-base-content">{title}</h3>
+    <p class="text-sm text-secondary leading-relaxed">{body}</p>
+    {href && (
+      <div class="card-actions justify-end mt-2">
+        <a href={href} class="btn btn-sm btn-primary">Детальніше</a>
+      </div>
+    )}
+  </div>
+</div>
+

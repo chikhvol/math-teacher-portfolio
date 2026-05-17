@@ -1,0 +1,23 @@
+---
+const { title, img, desc, url, badge, target = "_self" } = Astro.props;
+---
+<div class="card lg:card-side bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-shadow mb-4">
+  {img && (
+    <figure class="lg:w-1/3">
+      <img src={img} alt={title} class="object-cover w-full h-full" />
+    </figure>
+  )}
+  <div class="card-body">
+    <h2 class="card-title text-base-content">
+      {title}
+      {badge && <span class="badge badge-primary ml-2">{badge}</span>}
+    </h2>
+    <p class="text-secondary text-sm leading-relaxed">{desc}</p>
+    {url && (
+      <div class="card-actions justify-end">
+        <a href={url} target={target} class="btn btn-primary btn-sm">Переглянути</a>
+      </div>
+    )}
+  </div>
+</div>
+
