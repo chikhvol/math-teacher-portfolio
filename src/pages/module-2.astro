@@ -32,27 +32,34 @@ const items = [
       Візуалізація та динамічне моделювання
     </h1>
     <p class="text-secondary mt-3 leading-relaxed max-w-3xl">
-      У цьому модулі буде зібрано матеріали, присвячені візуалізації математичних
-      понять і динамічному моделюванню: GeoGebra-активності, графіки функцій,
-      побудови з динамічної геометрії та інтерактивні моделі. Зараз розділ містить
-      заготовки, які буде наповнено в межах подальшої роботи.
+      Документ створено на основі магістерської роботи на тему
+      «Розв’язування задач фінансового змісту у профільній школі». У ньому
+      подано візуалізований скелет дослідження: ключові поняття, структуру
+      теоретичних засад, алгоритм розв’язування задач фінансового змісту,
+      взаємозв’язок компонентів методичної системи та SWOT-аналіз дослідження.
     </p>
   </header>
 
-  <section>
-    <h2 class="text-2xl font-semibold text-base-content mb-5">Напрями роботи</h2>
-    <div class="grid md:grid-cols-2 gap-5">
-      {items.map((i) => <Card title={i.title} body={i.body} tag={i.tag} />)}
+    <div class="w-full rounded-lg overflow-hidden border border-base-300 bg-base-200">
+      <iframe
+        src="https://drive.google.com/file/d/1jqDzidTugjcs7O0-NCow75CDZNhnQp3L/preview"
+        title="Візуалізація концепції наукового дослідження"
+        class="w-full h-[480px] md:h-[700px]"
+        allow="autoplay"
+        loading="lazy"
+      ></iframe>
     </div>
-  </section>
 
-  <section class="mt-10">
-    <div class="alert bg-base-200 border border-base-300 text-secondary">
-      <span>
-        🛠 Розділ у розробці. Тут згодом з’являться посилання на власні GeoGebra-аплети,
-        приклади уроків та методичні матеріали для роботи з візуалізацією.
-      </span>
+    <div class="mt-4">
+      <a
+        href="https://drive.google.com/file/d/1jqDzidTugjcs7O0-NCow75CDZNhnQp3L/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Відкрити документ у Google Drive
+      </a>
     </div>
-  </section>
+
 </BaseLayout>
 
