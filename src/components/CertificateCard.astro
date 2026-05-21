@@ -3,15 +3,15 @@
 // Plain JavaScript у frontmatter, без TypeScript-інтерфейсів.
 const { title, description, reflection, certificateUrl } = Astro.props;
 ---
-<article class="card bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-shadow h-full">
-  <div class="card-body">
+<article class="h-full rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm transition-shadow hover:shadow-md">
+  <div class="flex h-full flex-col">
     <div class="flex items-start gap-3">
-      <div class="text-primary shrink-0 mt-1">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+      <div class="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       </div>
-      <h3 class="card-title text-base-content text-lg leading-snug">{title}</h3>
+      <h3 class="text-lg font-semibold leading-snug text-base-content">{title}</h3>
     </div>
 
     {description && (
@@ -26,7 +26,7 @@ const { title, description, reflection, certificateUrl } = Astro.props;
       </p>
     )}
 
-    <div class="card-actions justify-end mt-3">
+    <div class="mt-auto flex justify-end pt-4">
       <a
         href={certificateUrl}
         target="_blank"

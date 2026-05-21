@@ -21,8 +21,6 @@ const infoItems = [
   { label: "Цифровий інструмент", value: "Desmos" },
 ];
 
-const generalInfoCards = infoItems.filter((item) => item.label !== "Практичне заняття");
-
 const learningOutcomes = [
   "пояснювати зміст показникової функції у фінансовому контексті;",
   "записувати модель складних відсотків;",
@@ -90,6 +88,9 @@ const hintStyles = [
   "border-teal-200 bg-teal-50/70",
   "border-purple-200 bg-purple-50/70",
 ];
+
+const desmosScenarioUrl = "https://www.desmos.com/calculator/yoy5rif8au";
+const desmosEmbedUrl = `${desmosScenarioUrl}?embed`;
 
 const lessonSteps = [
   {
@@ -219,6 +220,14 @@ const manualTasks = [
       <div class="mb-5 max-w-3xl">
         <h2 id="general-info" class="text-2xl font-semibold text-base-content">Загальна інформація</h2>
       </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        {infoItems.filter((item) => item.label !== "Практичне заняття").map((item) => (
+          <div class="rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm">
+            <p class="text-sm font-semibold uppercase tracking-wide text-primary">{item.label}</p>
+            <p class="mt-2 leading-relaxed text-base-content">{item.value}</p>
+          </div>
+        ))}
+      </div>
     </section>
 
     <section aria-labelledby="project-logic">
@@ -317,13 +326,28 @@ const manualTasks = [
           </div>
         </div>
 
-        <div class="mb-4 rounded-2xl border border-base-300 bg-white/80 p-4 text-secondary">
-          <span class="font-semibold text-base-content">Посилання:</span>
-          <span class="ml-1">[Потрібно вставити посилання на створену Desmos-активність]</span>
+        <div class="mb-4 flex flex-col gap-3 rounded-2xl border border-base-300 bg-white/80 p-4 text-secondary md:flex-row md:items-center md:justify-between">
+          <div>
+            <span class="font-semibold text-base-content">Посилання на Desmos-сценарій:</span>
+            <p class="mt-1 break-all text-sm">{desmosScenarioUrl}</p>
+          </div>
+          <a
+            href={desmosScenarioUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-sm btn-primary shrink-0"
+          >
+            Відкрити в Desmos
+          </a>
         </div>
 
-        <div class="flex h-[420px] w-full items-center justify-center overflow-hidden rounded-2xl border border-dashed border-base-300 bg-white/70 p-6 text-center text-secondary md:h-[650px]">
-          <span>[Потрібно вставити iframe або скриншот графіка Desmos]</span>
+        <div class="h-[420px] w-full overflow-hidden rounded-2xl border border-base-300 bg-white/70 shadow-sm md:h-[650px]">
+          <iframe
+            src={desmosEmbedUrl}
+            title="Desmos-сценарій: показникова функція як модель складних відсотків та інфляції"
+            class="h-full w-full"
+            loading="lazy"
+          ></iframe>
         </div>
       </article>
     </section>
@@ -561,20 +585,6 @@ P(x) = S_0 * (1 + i)^x`}</code></pre>
           </p>
         </div>
       </article>
-    </section>
-
-    <section aria-labelledby="manual-tasks">
-      <div class="rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm md:p-6">
-        <h2 id="manual-tasks" class="text-2xl font-semibold text-base-content">Що потрібно виконати вручну</h2>
-        <div class="mt-4 grid gap-3 md:grid-cols-2">
-          {manualTasks.map((task) => (
-            <label class="flex gap-3 rounded-xl border border-base-300 bg-base-200/50 p-3 text-secondary">
-              <input type="checkbox" class="checkbox checkbox-primary checkbox-sm mt-0.5" disabled />
-              <span class="leading-relaxed">{task}</span>
-            </label>
-          ))}
-        </div>
-      </div>
     </section>
   </div>
 </BaseLayout>

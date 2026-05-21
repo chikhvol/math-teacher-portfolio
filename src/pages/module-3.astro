@@ -26,12 +26,16 @@ const items = [
 ];
 ---
 <BaseLayout title="Модуль 3. ШІ в освіті">
-  <header class="mb-10">
-    <p class="text-sm uppercase tracking-wider text-primary font-semibold">Модуль 3</p>
-    <h1 class="text-3xl md:text-4xl font-bold text-base-content mt-1">
+  <header class="mb-12 rounded-3xl border border-base-300 bg-gradient-to-br from-purple-50 via-base-100 to-blue-50 p-6 shadow-sm md:p-9">
+    <div class="mb-5 flex flex-wrap gap-3">
+      <span class="badge badge-primary badge-outline px-3 py-3">Модуль 3</span>
+      <span class="badge badge-outline px-3 py-3">ШІ в освіті</span>
+      <span class="badge badge-outline px-3 py-3">Відповідальне використання</span>
+    </div>
+    <h1 class="max-w-4xl text-3xl font-bold leading-tight text-base-content md:text-5xl">
       ШІ в освіті
     </h1>
-    <p class="text-secondary mt-3 leading-relaxed max-w-3xl">
+    <p class="mt-5 max-w-3xl text-lg leading-relaxed text-secondary">
       Модуль присвячено можливостям і викликам використання штучного інтелекту в
       освіті, зокрема у викладанні математики. Тут поступово буде зібрано
       приклади, рефлексії та методичні рекомендації щодо відповідального
@@ -40,18 +44,22 @@ const items = [
   </header>
 
   <section>
-    <h2 class="text-2xl font-semibold text-base-content mb-5">Напрями досліджень</h2>
-    <div class="grid md:grid-cols-2 gap-5">
+    <div class="mb-5 max-w-3xl">
+      <div class="badge badge-outline badge-primary mb-3">Матеріали модуля</div>
+      <h2 class="text-2xl font-semibold text-base-content">Напрями досліджень</h2>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2">
       {items.map((i) => <Card title={i.title} body={i.body} tag={i.tag} />)}
     </div>
   </section>
 
   <section class="mt-10">
-    <div class="alert bg-base-200 border border-base-300 text-secondary">
-      <span>
+    <div class="rounded-2xl border border-purple-100 bg-purple-50/60 p-5 shadow-sm md:p-6">
+      <div class="badge badge-outline badge-primary mb-3">Розділ у розробці</div>
+      <p class="max-w-3xl leading-relaxed text-secondary">
         🤖 Розділ у розробці. У майбутньому тут з’являться конкретні приклади
         промптів, кейси з уроків та рефлексії щодо використання ШІ в навчанні математики.
-      </span>
+      </p>
     </div>
   </section>
 </BaseLayout>

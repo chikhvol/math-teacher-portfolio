@@ -31,10 +31,11 @@ const interests = [
 ---
 <BaseLayout title="Головна">
     <!-- HERO / Профіль -->
-    <section class="grid md:grid-cols-3 gap-8 items-center mb-12">
-        <div class="md:col-span-1 flex justify-center">
+    <section class="mb-12 rounded-3xl border border-base-300 bg-gradient-to-br from-blue-50 via-base-100 to-teal-50 p-6 shadow-sm md:p-9">
+        <div class="grid items-center gap-8 md:grid-cols-3">
+        <div class="flex justify-center md:col-span-1">
             <div class="avatar">
-                <div class="w-44 h-44 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 bg-base-200 overflow-hidden flex items-center justify-center">
+                <div class="flex h-44 w-44 items-center justify-center overflow-hidden rounded-full bg-base-200 ring ring-primary/30 ring-offset-4 ring-offset-base-100">
                     <img
                             src="/images/profile-photo.jpg"
                             alt="Фото вчителя математики"
@@ -46,36 +47,41 @@ const interests = [
         </div>
 
         <div class="md:col-span-2">
-            <h1 class="text-3xl md:text-4xl font-bold text-base-content leading-tight">
+            <div class="badge badge-outline badge-primary mb-4">Цифрове портфоліо</div>
+            <h1 class="text-3xl font-bold leading-tight text-base-content md:text-5xl">
                 Вітаю на моєму цифровому портфоліо
             </h1>
-            <p class="mt-3 text-secondary leading-relaxed">
+            <p class="mt-5 max-w-3xl text-lg leading-relaxed text-secondary">
                 Мене звати Володимир Чіх. Для мене математика — це не просто навчальний предмет, а інструмент розвитку
                 логічного мислення, уважності й уміння розв’язувати складні задачі.
                 Тут зібрані мої педагогічні матеріали, рефлексії, сертифікати та освітні проєкти.
             </p>
-            <div class="mt-5 flex flex-wrap gap-2">
+            <div class="mt-6 flex flex-wrap gap-2">
                 <a href="/module-1" class="btn btn-outline btn-sm">Модуль 1</a>
                 <a href="/module-2" class="btn btn-outline btn-primary btn-sm">Модуль 2</a>
                 <a href="/module-3" class="btn btn-outline btn-primary btn-sm">Модуль 3</a>
             </div>
         </div>
+        </div>
     </section>
 
     <!-- Педагогічне кредо -->
     <section class="mb-12">
-        <h2 class="text-2xl font-semibold text-base-content mb-3">Моє педагогічне кредо</h2>
-        <blockquote class="border-l-4 border-primary pl-4 italic text-secondary leading-relaxed">
+        <div class="rounded-2xl border border-blue-100 bg-blue-50/70 p-5 shadow-sm md:p-6">
+        <h2 class="mb-3 text-2xl font-semibold text-base-content">Моє педагогічне кредо</h2>
+        <blockquote class="border-l-4 border-primary pl-4 italic leading-relaxed text-secondary">
             «Я вірю, що математику можна зрозуміти, якщо не боятися ставити запитання, помилятися і пробувати ще раз. Для мене важливо не просто дати учням формули чи правила, а допомогти їм навчитися мислити, бачити закономірності й упевнено шукати власний шлях до розв’язання.»
         </blockquote>
+        </div>
     </section>
 
     <!-- Чому шлях вчителя -->
     <section class="mb-12">
-        <h2 class="text-2xl font-semibold text-base-content mb-3">
+        <article class="rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm md:p-7">
+        <h2 class="mb-4 text-2xl font-semibold text-base-content">
             Чому я обрав шлях учителя математики
         </h2>
-        <div class="prose-page text-secondary leading-relaxed">
+        <div class="prose-page max-w-3xl text-secondary leading-relaxed">
             <p>
                 Мій шлях до вчительської професії, мабуть, почався ще задовго до того, як я сам це усвідомив.
                 Я виріс у родині вчителів: тато, мама, дідусь і бабуся пов’язали своє життя з освітою.
@@ -108,12 +114,16 @@ const interests = [
                 складність, а й користь, логіку та перспективу.
             </p>
         </div>
+        </article>
     </section>
 
     <!-- Професійні інтереси -->
     <section class="mb-12">
-        <h2 class="text-2xl font-semibold text-base-content mb-5">Професійні інтереси</h2>
-        <div class="grid md:grid-cols-2 gap-4">
+        <div class="mb-5 max-w-3xl">
+            <div class="badge badge-outline badge-primary mb-3">Напрями розвитку</div>
+            <h2 class="text-2xl font-semibold text-base-content">Професійні інтереси</h2>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
             {interests.map((i) =>
                     <Card title={i.title} body={i.body}/>)}
         </div>
@@ -121,8 +131,9 @@ const interests = [
 
     <!-- Контакти -->
     <section class="mb-4">
-        <h2 class="text-2xl font-semibold text-base-content mb-3">Контакти</h2>
-        <p class="text-secondary leading-relaxed mb-4">
+        <div class="rounded-2xl border border-teal-100 bg-teal-50/60 p-5 shadow-sm md:p-6">
+        <h2 class="mb-3 text-2xl font-semibold text-base-content">Контакти</h2>
+        <p class="mb-4 max-w-3xl leading-relaxed text-secondary">
             Я відкритий до співпраці з колегами, учнями та батьками. Нижче — мої контакти
             для зв’язку та професійного спілкування.
         </p>
@@ -133,6 +144,7 @@ const interests = [
                 </a>
             </li>
         </ul>
+        </div>
     </section>
 </BaseLayout>
 

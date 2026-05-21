@@ -30,12 +30,15 @@ const certificates = [
 ];
 ---
 <BaseLayout title="Модуль 1. Цифрова дидактика">
-    <header class="mb-10">
-        <p class="text-sm uppercase tracking-wider text-primary font-semibold">Модуль 1</p>
-        <h1 class="text-3xl md:text-4xl font-bold text-base-content mt-1">
+    <header class="mb-12 rounded-3xl border border-base-300 bg-gradient-to-br from-blue-50 via-base-100 to-teal-50 p-6 shadow-sm md:p-9">
+        <div class="mb-5 flex flex-wrap gap-3">
+            <span class="badge badge-primary badge-outline px-3 py-3">Модуль 1</span>
+            <span class="badge badge-outline px-3 py-3">Цифрова дидактика</span>
+        </div>
+        <h1 class="max-w-4xl text-3xl font-bold leading-tight text-base-content md:text-5xl">
             Цифрова дидактика
         </h1>
-        <p class="text-secondary mt-3 leading-relaxed max-w-3xl">
+        <p class="mt-5 max-w-3xl text-lg leading-relaxed text-secondary">
             Цей розділ присвячений моєму знайомству з цифровою дидактикою та інструментами, які допомагають зробити
             навчання математики більш безпечним, сучасним і доступним для учнів.
 
@@ -46,8 +49,11 @@ const certificates = [
 
     <!-- A. Сертифікати -->
     <section class="mb-14">
-        <h2 class="text-2xl font-semibold text-base-content mb-5">Професійне навчання та сертифікати</h2>
-        <div class="grid md:grid-cols-2 gap-5">
+        <div class="mb-5 max-w-3xl">
+            <div class="badge badge-outline badge-primary mb-3">Професійне навчання</div>
+            <h2 class="text-2xl font-semibold text-base-content">Сертифікати курсів</h2>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2">
             {certificates.map((c) => (
                     <CertificateCard
                             title={c.title}
@@ -61,9 +67,9 @@ const certificates = [
 
     <!-- B. Есе -->
     <section class="mb-14">
-        <h2 class="text-2xl font-semibold text-base-content mb-3">Цифрові технології в математичній освіті</h2>
-        <article class="card bg-base-100 border border-base-300 shadow-sm">
-            <div class="card-body prose-page">
+        <article class="rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm md:p-7">
+            <h2 class="text-2xl font-semibold text-base-content">Цифрові технології в математичній освіті</h2>
+            <div class="prose-page mt-4 max-w-3xl space-y-4">
                 <p class="text-secondary leading-relaxed">
                     Цифрові технології поступово стають невід’ємною частиною уроку математики.
                     Вони не замінюють учителя, але дають йому нові інструменти, щоб зробити
@@ -87,27 +93,29 @@ const certificates = [
 
     <!-- C. Хмаринка слів -->
     <section class="mb-14">
-        <h2 class="text-2xl font-semibold text-base-content mb-3">Цифрова компетентність учителя математики</h2>
-        <p class="text-secondary mb-4 leading-relaxed">
+        <div class="mb-5 max-w-3xl">
+        <h2 class="text-2xl font-semibold text-base-content">Цифрова компетентність учителя математики</h2>
+        <p class="mt-3 leading-relaxed text-secondary">
             Окремо я спробував візуально представити ключові поняття, які асоціюються з цифровою компетентністю вчителя
             математики. Такий формат допомагає швидко побачити, які навички й підходи є важливими для сучасного
             педагога.
         </p>
-        <figure class="border border-base-300 rounded-lg overflow-hidden bg-base-200">
+        </div>
+        <figure class="overflow-hidden rounded-2xl border border-base-300 bg-base-200 shadow-sm">
             <img
                     src="/images/word-cloud.jpeg"
                     alt="Хмаринка слів: цифрова компетентність вчителя математики"
                     class="w-full object-contain"
-                    onerror="this.style.display='none'; this.parentElement.querySelector('figcaption').classList.remove('hidden');"
             />
         </figure>
     </section>
 
     <!-- D. Рефлексія -->
     <section>
-        <h2 class="text-2xl font-semibold text-base-content mb-3">Що дав мені цей модуль</h2>
-        <div class="card bg-base-200 border border-base-300">
-            <div class="card-body">
+        <div class="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 via-base-100 to-emerald-50 p-5 shadow-sm md:p-7">
+            <div class="badge badge-outline badge-primary mb-3">Рефлексія</div>
+            <h2 class="text-2xl font-semibold text-base-content">Що дав мені цей модуль</h2>
+            <div class="mt-4 max-w-3xl space-y-4">
                 <p class="text-secondary leading-relaxed">
                     Робота над цим модулем допомогла мені краще впорядкувати власні навчальні матеріали, сертифікати та
                     професійні напрацювання. Створення цифрового портфоліо стало для мене не просто виконанням

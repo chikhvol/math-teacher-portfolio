@@ -26,12 +26,16 @@ const items = [
 ];
 ---
 <BaseLayout title="Модуль 2. Візуалізація та динамічне моделювання">
-  <header class="mb-10">
-    <p class="text-sm uppercase tracking-wider text-primary font-semibold">Модуль 2</p>
-    <h1 class="text-3xl md:text-4xl font-bold text-base-content mt-1">
+  <header class="mb-12 rounded-3xl border border-base-300 bg-gradient-to-br from-blue-50 via-base-100 to-teal-50 p-6 shadow-sm md:p-9">
+    <div class="mb-5 flex flex-wrap gap-3">
+      <span class="badge badge-primary badge-outline px-3 py-3">Модуль 2</span>
+      <span class="badge badge-outline px-3 py-3">Візуалізація</span>
+      <span class="badge badge-outline px-3 py-3">Динамічне моделювання</span>
+    </div>
+    <h1 class="max-w-4xl text-3xl font-bold leading-tight text-base-content md:text-5xl">
       Візуалізація та динамічне моделювання
     </h1>
-    <p class="text-secondary mt-3 leading-relaxed max-w-3xl">
+    <p class="mt-5 max-w-3xl text-lg leading-relaxed text-secondary">
       У цьому модулі зібрано матеріали, присвячені візуалізації математичних
       понять і динамічному моделюванню: GeoGebra-активності, графіки функцій,
       побудови з динамічної геометрії, інтерактивні моделі та практичні
@@ -40,8 +44,11 @@ const items = [
   </header>
 
   <section class="mb-12">
-    <h2 class="text-2xl font-semibold text-base-content mb-5">Практичні роботи</h2>
-    <div class="grid md:grid-cols-2 gap-5">
+    <div class="mb-5 max-w-3xl">
+      <div class="badge badge-outline badge-primary mb-3">Практичні завдання</div>
+      <h2 class="text-2xl font-semibold text-base-content">Практичні роботи</h2>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2">
       <Card
         title="Міні-проєкт"
         body="Цифровий урок для 11 класу: показникова функція як модель складних відсотків та інфляції з використанням кейс-методу та Desmos."
@@ -52,25 +59,32 @@ const items = [
   </section>
 
   <section class="mb-12">
-    <h2 class="text-2xl font-semibold text-base-content mb-5">Напрями роботи</h2>
-    <div class="grid md:grid-cols-2 gap-5">
+    <div class="mb-5 max-w-3xl">
+      <div class="badge badge-outline badge-primary mb-3">Матеріали модуля</div>
+      <h2 class="text-2xl font-semibold text-base-content">Напрями роботи</h2>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2">
       {items.map((i) => <Card title={i.title} body={i.body} tag={i.tag} />)}
     </div>
   </section>
 
   <section>
-    <h2 class="text-2xl font-semibold text-base-content mb-3">
-      Візуалізація концепції наукового дослідження
-    </h2>
-    <p class="text-secondary leading-relaxed max-w-3xl mb-5">
-      Документ створено на основі магістерської роботи на тему
-      «Розв’язування задач фінансового змісту у профільній школі». У ньому
-      подано візуалізований скелет дослідження: ключові поняття, структуру
-      теоретичних засад, алгоритм розв’язування задач фінансового змісту,
-      взаємозв’язок компонентів методичної системи та SWOT-аналіз дослідження.
-    </p>
+    <article class="rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm md:p-7">
+      <div class="mb-5 max-w-3xl">
+        <div class="badge badge-outline badge-primary mb-3">Практичні заняття 4–5</div>
+        <h2 class="text-2xl font-semibold text-base-content">
+          Візуалізація концепції наукового дослідження
+        </h2>
+        <p class="mt-4 leading-relaxed text-secondary">
+          Документ створено на основі магістерської роботи на тему
+          «Розв’язування задач фінансового змісту у профільній школі». У ньому
+          подано візуалізований скелет дослідження: ключові поняття, структуру
+          теоретичних засад, алгоритм розв’язування задач фінансового змісту,
+          взаємозв’язок компонентів методичної системи та SWOT-аналіз дослідження.
+        </p>
+      </div>
 
-    <div class="w-full rounded-lg overflow-hidden border border-base-300 bg-base-200">
+    <div class="w-full overflow-hidden rounded-2xl border border-base-300 bg-base-200 shadow-sm">
       <iframe
         src="https://drive.google.com/file/d/1jqDzidTugjcs7O0-NCow75CDZNhnQp3L/preview"
         title="Візуалізація концепції наукового дослідження"
@@ -90,6 +104,7 @@ const items = [
         Відкрити документ у Google Drive
       </a>
     </div>
+    </article>
   </section>
 
 </BaseLayout>
