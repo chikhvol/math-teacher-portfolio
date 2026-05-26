@@ -24,6 +24,13 @@ const items = [
     tag: "Етика",
   },
 ];
+
+const practicalWork = {
+  title: "Практична робота 9–10",
+  body: "Критичний аналіз та адаптація математичного контенту, згенерованого ШІ, на темі показникової функції, фінансової грамотності та графічної інтерпретації.",
+  tag: "Нова підсторінка",
+  href: "/module-3/ai-content-analysis",
+};
 ---
 <BaseLayout title="Модуль 3. ШІ в освіті">
   <header class="mb-12 rounded-3xl border border-base-300 bg-gradient-to-br from-purple-50 via-base-100 to-blue-50 p-6 shadow-sm md:p-9">
@@ -43,10 +50,24 @@ const items = [
     </p>
   </header>
 
-  <section>
+  <section class="mb-10" aria-labelledby="practice-link">
+    <div class="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 via-base-100 to-teal-50 p-5 shadow-sm md:p-6">
+      <div class="mb-4 max-w-3xl">
+        <div class="badge badge-outline badge-primary mb-3">Практичні матеріали</div>
+        <h2 id="practice-link" class="text-2xl font-semibold text-base-content">Практична робота № 9–10</h2>
+        <p class="mt-2 leading-relaxed text-secondary">
+          Окрема сторінка з 5 ШІ-згенерованими завданнями для подальшого критичного аналізу,
+          методичного редагування та адаптації до навчання математики в 11 класі.
+        </p>
+      </div>
+      <Card title={practicalWork.title} body={practicalWork.body} tag={practicalWork.tag} href={practicalWork.href} />
+    </div>
+  </section>
+
+  <section aria-labelledby="module-directions">
     <div class="mb-5 max-w-3xl">
       <div class="badge badge-outline badge-primary mb-3">Матеріали модуля</div>
-      <h2 class="text-2xl font-semibold text-base-content">Напрями досліджень</h2>
+      <h2 id="module-directions" class="text-2xl font-semibold text-base-content">Напрями досліджень</h2>
     </div>
     <div class="grid gap-5 md:grid-cols-2">
       {items.map((i) => <Card title={i.title} body={i.body} tag={i.tag} />)}
