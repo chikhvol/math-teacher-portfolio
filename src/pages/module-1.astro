@@ -31,36 +31,24 @@ const featuredCertificates = [
 
 const testingCertificates = [
     {
-        title: "Практичний тест: Інформатика — 10 клас",
-        description:
-            "Результат проходження тесту «Приклади питань / 10 клас» з предмету Інформатика на платформі Naurok: 45,75 із 50 балів (91,5%).",
-        reflection:
-            "Тестування підтвердило впевнений рівень знань базових тем інформатики 10 класу та визначило напрями для подальшого опрацювання.",
-        certificateUrl: "/images/testing/inf-10.png",
+        title: "Інформатика — 10 клас",
+        score: "45,75 / 50 (91,5%)",
+        imageUrl: "/images/testing/inf-10.png",
     },
     {
-        title: "Практичний тест: Інформатика — 11 клас",
-        description:
-            "Результат проходження тесту «Приклади питань / 11 клас» з предмету Інформатика на платформі Naurok: 49,2 із 50 балів (98,4%).",
-        reflection:
-            "Високий результат засвідчив глибоке розуміння тем інформатики 11 класу, пов’язаних із цифровими технологіями та алгоритмами.",
-        certificateUrl: "/images/testing/inf-11.png",
+        title: "Інформатика — 11 клас",
+        score: "49,2 / 50 (98,4%)",
+        imageUrl: "/images/testing/inf-11.png",
     },
     {
-        title: "Практичний тест: Математика — 11 клас",
-        description:
-            "Результат проходження тесту «Приклади питань / 11 клас» з предмету Математика на платформі Naurok: 50 із 50 балів (100%).",
-        reflection:
-            "Максимальний результат відображає впевнене знання ключових тем математики 11 класу, які безпосередньо стосуються профільного навчання.",
-        certificateUrl: "/images/testing/math-11.png",
+        title: "Математика — 11 клас",
+        score: "50 / 50 (100%)",
+        imageUrl: "/images/testing/math-11.png",
     },
     {
-        title: "Практичний тест: створення сайту в Google Sites",
-        description:
-            "Результат практичного тесту зі створення освітнього сайту в сервісі Google Сайти на платформі Naurok: 13/15 балів (86,67%).",
-        reflection:
-            "Це завдання допомогло відпрацювати структурування навчального контенту, візуальне оформлення сторінок і базову навігацію для цифрового освітнього середовища.",
-        certificateUrl: "/images/testing/naurok.png",
+        title: "Створення сайту в Google Sites",
+        score: "13 / 15 (86,67%)",
+        imageUrl: "/images/testing/naurok.png",
     },
 ];
 
@@ -152,14 +140,27 @@ const certificates = [
                 Підсумкові скріншоти проходження практичних тестів на платформі Naurok та Olimpis інформатики, математики та зі створення сайту в Google Sites.
             </p>
         </div>
-        <div class="grid gap-5 md:grid-cols-2">
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {testingCertificates.map((c) => (
-                <CertificateCard
-                    title={c.title}
-                    description={c.description}
-                    reflection={c.reflection}
-                    certificateUrl={c.certificateUrl}
-                />
+                <a
+                    href={c.imageUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group flex flex-col overflow-hidden rounded-2xl border border-base-300 bg-base-100 shadow-sm transition-shadow hover:shadow-md"
+                >
+                    <figure class="aspect-[4/3] overflow-hidden bg-base-200">
+                        <img
+                            src={c.imageUrl}
+                            alt={c.title}
+                            loading="lazy"
+                            class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                        />
+                    </figure>
+                    <div class="flex flex-col gap-1 p-4">
+                        <h3 class="text-sm font-semibold leading-snug text-base-content">{c.title}</h3>
+                        <p class="text-sm font-medium text-primary">{c.score}</p>
+                    </div>
+                </a>
             ))}
         </div>
     </section>
